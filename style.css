@@ -110,6 +110,16 @@ button:hover {
   flex-direction: column;
 }
 
+/* Add hover animation to gallery items */
+.gallery-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 /* Three columns on wider screens */
 @media (min-width: 1000px) {
   .gallery-item {
@@ -141,4 +151,68 @@ button:hover {
 .placeholder-icon {
   font-size: 48px;
   margin-bottom: 20px;
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  visibility: hidden; /* Hidden by default */
+  opacity: 0; /* Fully transparent by default */
+  transition: visibility 0s, opacity 0.3s; /* Smooth transition */
+}
+
+.modal.hidden {
+  visibility: hidden; /* Ensure modal is hidden */
+  opacity: 0; /* Ensure modal is fully transparent */
+}
+
+.modal:not(.hidden) {
+  visibility: visible; /* Make modal visible */
+  opacity: 1; /* Make modal fully opaque */
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.modal-content h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
 }
