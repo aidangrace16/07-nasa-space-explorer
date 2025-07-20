@@ -201,3 +201,36 @@ button.addEventListener('click', () => {
   const endDate = endInput.value;
   fetchImages(startDate, endDate);
 });
+
+// Function to open the image in full screen
+const openFullScreenImage = () => {
+  // Create a full-screen container
+  const fullScreenContainer = document.createElement('div');
+  fullScreenContainer.className = 'full-screen-container';
+
+  // Create the full-screen image element
+  const fullScreenImage = document.createElement('img');
+  fullScreenImage.src = modalImage.src;
+  fullScreenImage.alt = modalImage.alt;
+  fullScreenImage.className = 'full-screen-image';
+
+  // Create the close button
+  const closeFullScreenButton = document.createElement('span');
+  closeFullScreenButton.className = 'close-full-screen';
+  closeFullScreenButton.textContent = '×';
+
+  // Add event listener to close the full-screen view
+  closeFullScreenButton.addEventListener('click', () => {
+    document.body.removeChild(fullScreenContainer);
+  });
+
+  // Append elements to the full-screen container
+  fullScreenContainer.appendChild(fullScreenImage);
+  fullScreenContainer.appendChild(closeFullScreenButton);
+
+  // Append the full-screen container to the body
+  document.body.appendChild(fullScreenContainer);
+};
+
+// Add event listener to the modal image to open it in full screen
+modalImage.addEventListener('click', openFullScreenImage);

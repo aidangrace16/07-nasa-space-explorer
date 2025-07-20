@@ -200,38 +200,40 @@ button:hover {
 .modal-content {
   background: #2a2a2a; /* Dark grey modal background */
   color: #e0e0e0; /* Light grey text */
-  padding: 20px;
+  padding: 30px; /* Add more padding for better spacing */
   border-radius: 8px;
-  max-width: 600px;
+  max-width: 50vw; /* Make the modal slightly less wide */
   width: 50%;
   text-align: center;
   position: relative;
-  max-height: 90vh; /* Limit modal height to 90% of the viewport */
-  max-width: 60vw; /* Limit modal width to 90% of the viewport */
+  max-height: 95vh; /* Make the modal taller */
   overflow: hidden; /* Prevent content overflow */
   display: flex; /* Enable flexbox for scaling */
   flex-direction: column; /* Stack content vertically */
   align-items: center; /* Center content horizontally */
   justify-content: center; /* Center content vertically */
+  gap: 4px;
 }
 
 .modal-content img {
-  max-height: 40vh; /* Scale image to fit within modal */
-  max-width: 100%; /* Ensure image doesn't exceed modal width */
+  max-height: 50vh; /* Make the image slightly larger */
+  max-width: 90%; /* Ensure the image doesn't exceed modal width */
   object-fit: contain; /* Maintain aspect ratio */
+  margin-bottom: 10px; /* Add spacing below the image */
 }
 
 .modal-content h2 {
   font-family: 'Inter', 'Public Sans', 'Helvetica', 'Source Sans Pro', Arial, sans-serif;
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* Add spacing below the title */
 }
 
 .modal-content p {
   font-family: 'Inter', 'Public Sans', 'Helvetica', 'Source Sans Pro', Arial, sans-serif;
   font-size: 14px;
   color: #e0e0e0; /* Light grey text */
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* Add consistent spacing between paragraphs */
+  line-height: 1.6; /* Increase line spacing for better readability */
 }
 
 .close-button {
@@ -250,5 +252,42 @@ button:hover {
   margin-bottom: 20px;
   font-size: 16px;
   font-family: 'Inter', 'Public Sans', 'Helvetica', 'Source Sans Pro', Arial, sans-serif;
+  text-align: center;
+}
+
+/* Full-screen image container */
+.full-screen-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95); /* Dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000; /* Ensure it appears above other elements */
+}
+
+/* Full-screen image */
+.full-screen-image {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Close button for full-screen view */
+.close-full-screen {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 32px;
+  color: #ffffff; /* White color for visibility */
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  padding: 10px;
+  border-radius: 50%;
+  line-height: 1;
   text-align: center;
 }
