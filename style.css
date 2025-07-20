@@ -291,3 +291,36 @@ button:hover {
   line-height: 1;
   text-align: center;
 }
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+  .modal-content {
+    max-width: 90%; /* Ensure modal fits within smaller screens */
+    width: 90%; /* Adjust width for smaller screens */
+    padding: 20px; /* Maintain consistent padding */
+    border-radius: 4px; /* Match the old border radius */
+  }
+
+  .modal-content img {
+    width: 100%; /* Ensure image scales properly */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 4px; /* Match the old border radius */
+    margin-bottom: 15px; /* Add spacing below the image */
+  }
+
+  .modal-content h2 {
+    font-size: 18px; /* Slightly smaller font size for titles */
+    margin-bottom: 10px; /* Maintain spacing below the title */
+  }
+
+  .modal-content p {
+    font-size: 14px; /* Match the old font size */
+    margin-bottom: 10px; /* Maintain consistent spacing */
+  }
+
+  .close-button {
+    font-size: 20px; /* Slightly smaller close button */
+    top: 10px; /* Maintain position */
+    right: 10px; /* Maintain position */
+  }
+}
