@@ -46,6 +46,9 @@ const openModal = (item) => {
     `;
   }
 
+  // Reset the scroll position of the explanation paragraph to the top
+  modalExplanation.scrollTop = 0;
+
   modal.classList.remove('hidden');
   console.log('Modal is now visible');
 };
