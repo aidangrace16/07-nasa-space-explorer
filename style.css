@@ -65,6 +65,11 @@ button {
   line-height: 1.4;
   width: 100%;
   background-color: #333333; /* Dark grey background */
+  /* Fix for iOS date input styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-sizing: border-box; /* Ensure consistent box sizing */
 }
 
 /* Button specific */
@@ -357,5 +362,11 @@ button:hover {
     overflow-y: auto; /* Add vertical scrollbar when content exceeds max height */
     padding-right: 10px; /* Add some padding for the scrollbar */
     text-align: left; /* Align text to left for better readability when scrolling */
+  }
+
+  /* Extra fix for iOS date inputs to ensure consistent width */
+  input[type="date"] {
+    min-width: 0; /* Override iOS default min-width */
+    flex-shrink: 1; /* Allow shrinking to match button width */
   }
 }
