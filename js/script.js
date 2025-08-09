@@ -26,6 +26,9 @@ const closeModal = document.getElementById('closeModal');
 const openModal = (item) => {
   console.log(`Gallery item clicked: ${item.title}`);
 
+  // Prevent body scrolling on mobile devices
+  document.body.style.overflow = 'hidden';
+
   if (item.media_type === 'image') {
     // Handle image entries
     modalImage.src = item.url;
@@ -55,6 +58,9 @@ const openModal = (item) => {
 
 // Function to close the modal
 const closeModalHandler = () => {
+  // Restore body scrolling
+  document.body.style.overflow = '';
+  
   // Add the 'hidden' class to hide the modal
   modal.classList.add('hidden');
 
@@ -207,6 +213,9 @@ button.addEventListener('click', () => {
 
 // Function to open the image in full screen
 const openFullScreenImage = () => {
+  // Prevent body scrolling when full screen is open
+  document.body.style.overflow = 'hidden';
+  
   // Create a full-screen container
   const fullScreenContainer = document.createElement('div');
   fullScreenContainer.className = 'full-screen-container';
@@ -224,6 +233,8 @@ const openFullScreenImage = () => {
 
   // Add event listener to close the full-screen view
   closeFullScreenButton.addEventListener('click', () => {
+    // Restore body scrolling when closing full screen
+    document.body.style.overflow = '';
     document.body.removeChild(fullScreenContainer);
   });
 
