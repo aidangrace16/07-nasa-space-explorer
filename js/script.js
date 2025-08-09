@@ -81,10 +81,14 @@ modal.addEventListener('click', (event) => {
 // Function to fetch and display images or videos from NASA's APOD API
 const fetchImages = async (startDate, endDate) => {
   try {
-    // Show a loading message
+    // Show a unique pulsing dots loading animation
     gallery.innerHTML = `
       <div class="placeholder">
-        <div class="placeholder-icon">🔄</div>
+        <div class="loading-dots">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
         <p>Loading space photos…</p>
       </div>
     `;
